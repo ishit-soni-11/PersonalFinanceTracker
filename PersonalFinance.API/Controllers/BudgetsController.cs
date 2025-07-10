@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PersonalFinanceTracker.Data.Context;
 using PersonalFinanceTracker.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PersonalFinanceTracker.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class BudgetsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
